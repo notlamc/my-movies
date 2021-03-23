@@ -1,6 +1,6 @@
 # My Movies
 
-My Movies is a simple React app that aims to demonstrate some of the technologies I am currently using in other projects.
+My Movies is a simple React app that aims to demonstrate some of the technologies I am currently using in other projects. It's not pretty but it is functional.
 
 The aim of My Movies is to be able to play with new things I want to try out and test their functionality.
 
