@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-
 const ResetStyle = createGlobalStyle`
 
   *, *::before, *::after {
@@ -81,5 +80,4 @@ const ResetStyle = createGlobalStyle`
   }
 
 `;
-
 export default ResetStyle;

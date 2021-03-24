@@ -22,6 +22,7 @@ ReactDOM.render(
     </Helmet>
 
     <GlobalStyle />
+
     <App />
   </React.StrictMode>,
 

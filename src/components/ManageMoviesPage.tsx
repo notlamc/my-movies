@@ -97,9 +97,11 @@ const ManageMoviesPage = (props: RouteComponentProps) => {
 export default ManageMoviesPage;
 
 const Container = styled.div`
-  display: grid;
+  display: flex;
 
-  grid-gap: 1rem;
+  flex-direction: column;
+
+  gap: 1rem;
 `;
 
 const StyledTitle = styled.div`
@@ -112,7 +114,11 @@ const StyledTitle = styled.div`
 
 const StyledMessage = styled.div``;
 
-const StyledAddMovie = styled.div``;
+const StyledAddMovie = styled.div`
+  display: flex;
+
+  gap: 1rem;
+`;
 
 const StyledDeleteMovieButton = styled.button``;
 
@@ -121,17 +127,17 @@ const StyledMovieName = styled.span`
 `;
 
 const StyledMovieList = styled.div`
-  display: grid;
+  display: flex;
 
-  grid-gap: 1rem;
+  flex-direction: column;
+
+  gap: 1rem;
 `;
 
 const StyledMovie = styled.div`
-  display: grid;
+  display: flex;
 
-  grid-template-columns: auto 1fr;
-
-  grid-gap: 1rem;
+  gap: 1rem;
 
   align-items: center;
 `;

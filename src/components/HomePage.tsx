@@ -30,9 +30,11 @@ const HomePage = () => {
 export default HomePage;
 
 const Container = styled.div`
-  display: grid;
+  display: flex;
 
-  grid-gap: 1rem;
+  flex-direction: column;
+
+  gap: 1rem;
 `;
 
 const StyledTitle = styled.div`

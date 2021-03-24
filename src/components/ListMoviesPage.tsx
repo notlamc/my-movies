@@ -49,9 +49,11 @@ const ListMoviesPage = (props: RouteComponentProps) => {
 export default ListMoviesPage;
 
 const Container = styled.div`
-  display: grid;
+  display: flex;
 
-  grid-gap: 1rem;
+  flex-direction: column;
+
+  gap: 1rem;
 `;
 
 const StyledTitle = styled.div`
@@ -69,17 +71,17 @@ const StyledMovieName = styled.span`
 `;
 
 const StyledMovieList = styled.div`
-  display: grid;
+  display: flex;
 
-  grid-gap: 1rem;
+  flex-direction: column;
+
+  gap: 1rem;
 `;
 
 const StyledMovie = styled.div`
-  display: grid;
+  display: flex;
 
-  grid-template-columns: auto 1fr;
-
-  grid-gap: 1rem;
+  gap: 1rem;
 
   align-items: center;
 `;
