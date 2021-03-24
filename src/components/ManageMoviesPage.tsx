@@ -50,7 +50,7 @@ const ManageMoviesPage = (props: RouteComponentProps) => {
           disabled={
             !movieName ||
             movies.findIndex(
-              (movie) => movie.name.toLowerCase() == movieName.toLowerCase()
+              (movie) => movie.name.toLowerCase() === movieName.toLowerCase()
             ) > -1
           }
         >
