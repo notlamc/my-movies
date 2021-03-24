@@ -7,11 +7,13 @@ import { RouteComponentProps } from "react-router";
 const PageNotFoundPage = (props: RouteComponentProps) => {
   return (
     <Container>
-      <Title>Page Not Found</Title>
+      <StyledTitle>Page Not Found</StyledTitle>
 
-      <Message>Sorry, but the page you requested was not found.</Message>
+      <StyledMessage>
+        Sorry, but the page you requested was not found.
+      </StyledMessage>
 
-      <Link to="/">Home</Link>
+      <StyledLink to="/">Home</StyledLink>
     </Container>
   );
 };
@@ -24,8 +26,22 @@ const Container = styled.div`
   grid-gap: 1rem;
 `;
 
-const Title = styled.div`
+const StyledTitle = styled.div`
   font-size: 2rem;
 `;
 
-const Message = styled.div``;
+const StyledMessage = styled.div``;
+
+const StyledLink = styled(Link)`
+  padding: 5px;
+
+  color: #3c7ade;
+
+  text-decoration: none;
+
+  &:hover {
+    color: #ffffff;
+
+    background: #3c7ade;
+  }
+`;

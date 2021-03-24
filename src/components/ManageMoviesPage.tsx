@@ -29,11 +29,13 @@ const ManageMoviesPage = (props: RouteComponentProps) => {
 
   return (
     <Container>
-      <Title>Manage Movies</Title>
+      <StyledTitle>Manage Movies</StyledTitle>
 
-      <Message>On this page, you can manage the list of movies.</Message>
+      <StyledMessage>
+        On this page, you can manage the list of movies.
+      </StyledMessage>
 
-      <AddMovieContainer>
+      <StyledAddMovie>
         <input
           type="text"
           placeholder="Movie Name"
@@ -49,43 +51,45 @@ const ManageMoviesPage = (props: RouteComponentProps) => {
         >
           Add Movie
         </button>
-      </AddMovieContainer>
+      </StyledAddMovie>
 
       {movies.length > 0 ? (
         <>
-          <Message>
+          <StyledMessage>
             There{" "}
             {movies.length === 1 ? "is 1 movie" : `are ${movies.length} movies`}
             .
-          </Message>
+          </StyledMessage>
 
-          <MovieListContainer>
+          <StyledMovieList>
             {movies.map((movie: IMovie, index: number) => (
-              <MovieContainer>
-                <DeleteMovieButton
+              <StyledMovie key={movie.id}>
+                <StyledDeleteMovieButton
                   onClick={() => dispatch(removeMovieActionCreator(movie.id))}
                 >
                   Delete Movie
-                </DeleteMovieButton>
+                </StyledDeleteMovieButton>
 
-                <MovieName>
+                <StyledMovieName>
                   Movie #{index + 1}:{movie.name}
-                </MovieName>
-              </MovieContainer>
+                </StyledMovieName>
+              </StyledMovie>
             ))}
-          </MovieListContainer>
+          </StyledMovieList>
         </>
       ) : (
         <>
-          <Message>There are no Movies.</Message>
+          <StyledMessage>There are no Movies.</StyledMessage>
         </>
       )}
 
-      <ResetMoviesButton onClick={() => dispatch(resetMoviesActionCreator())}>
+      <StyledResetMoviesButton
+        onClick={() => dispatch(resetMoviesActionCreator())}
+      >
         Reset Movies
-      </ResetMoviesButton>
+      </StyledResetMoviesButton>
 
-      <Link to="/">Home</Link>
+      <StyledLink to="/">Home</StyledLink>
     </Container>
   );
 };
@@ -98,27 +102,31 @@ const Container = styled.div`
   grid-gap: 1rem;
 `;
 
-const Title = styled.div`
+const StyledTitle = styled.div`
   font-size: 2rem;
+
+  font-weight: 400;
+
+  color: #3c7ade;
 `;
 
-const Message = styled.div``;
+const StyledMessage = styled.div``;
 
-const AddMovieContainer = styled.div``;
+const StyledAddMovie = styled.div``;
 
-const DeleteMovieButton = styled.button``;
+const StyledDeleteMovieButton = styled.button``;
 
-const MovieName = styled.span`
-  font-weight: 600;
+const StyledMovieName = styled.span`
+  font-weight: 400;
 `;
 
-const MovieListContainer = styled.div`
+const StyledMovieList = styled.div`
   display: grid;
 
   grid-gap: 1rem;
 `;
 
-const MovieContainer = styled.div`
+const StyledMovie = styled.div`
   display: grid;
 
   grid-template-columns: auto 1fr;
@@ -128,6 +136,20 @@ const MovieContainer = styled.div`
   align-items: center;
 `;
 
-const ResetMoviesButton = styled.button`
+const StyledResetMoviesButton = styled.button`
   width: 20rem;
+`;
+
+const StyledLink = styled(Link)`
+  padding: 5px;
+
+  color: #3c7ade;
+
+  text-decoration: none;
+
+  &:hover {
+    color: #ffffff;
+
+    background: #3c7ade;
+  }
 `;

@@ -11,13 +11,18 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Title>Welcome</Title>
+      <StyledTitle>Main Menu</StyledTitle>
 
-      <Message>Select an option from the list below.</Message>
+      <StyledMessage>What would you like to do?</StyledMessage>
 
-      <Link to="/manage-movies">Manage Movies</Link>
+      <StyledLink to="/manage-movies">Manage Movies</StyledLink>
 
-      <Link to="/list-movies">List Movies ({movies.length})</Link>
+      {movies.length > 0 && (
+        <StyledLink to="/list-movies">
+          List Movies (
+          {movies.length === 1 ? "1 movie" : `${movies.length} movies`})
+        </StyledLink>
+      )}
     </Container>
   );
 };
@@ -30,8 +35,26 @@ const Container = styled.div`
   grid-gap: 1rem;
 `;
 
-const Title = styled.div`
+const StyledTitle = styled.div`
   font-size: 2rem;
+
+  font-weight: 400;
+
+  color: #3c7ade;
 `;
 
-const Message = styled.div``;
+const StyledMessage = styled.div``;
+
+const StyledLink = styled(Link)`
+  padding: 5px;
+
+  color: #3c7ade;
+
+  text-decoration: none;
+
+  &:hover {
+    color: #ffffff;
+
+    background: #3c7ade;
+  }
+`;

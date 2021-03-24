@@ -15,33 +15,33 @@ const ListMoviesPage = (props: RouteComponentProps) => {
 
   return (
     <Container>
-      <Title>List Movies</Title>
+      <StyledTitle>List Movies</StyledTitle>
 
       {movies.length > 0 ? (
         <>
-          <Message>
+          <StyledMessage>
             There{" "}
             {movies.length === 1 ? "is 1 movie" : `are ${movies.length} movies`}
             .
-          </Message>
+          </StyledMessage>
 
-          <MovieListContainer>
+          <StyledMovieList>
             {movies.map((movie: IMovie, index: number) => (
-              <MovieContainer>
-                <MovieName>
+              <StyledMovie key={movie.id}>
+                <StyledMovieName>
                   Movie #{index + 1}: {movie.name} ({movie.id})
-                </MovieName>
-              </MovieContainer>
+                </StyledMovieName>
+              </StyledMovie>
             ))}
-          </MovieListContainer>
+          </StyledMovieList>
         </>
       ) : (
         <>
-          <Message>There are no Movies.</Message>
+          <StyledMessage>There are no Movies.</StyledMessage>
         </>
       )}
 
-      <Link to="/">Home</Link>
+      <StyledLink to="/">Home</StyledLink>
     </Container>
   );
 };
@@ -54,23 +54,27 @@ const Container = styled.div`
   grid-gap: 1rem;
 `;
 
-const Title = styled.div`
+const StyledTitle = styled.div`
   font-size: 2rem;
+
+  font-weight: 400;
+
+  color: #3c7ade;
 `;
 
-const Message = styled.div``;
+const StyledMessage = styled.div``;
 
-const MovieName = styled.span`
-  font-weight: 600;
+const StyledMovieName = styled.span`
+  font-weight: 400;
 `;
 
-const MovieListContainer = styled.div`
+const StyledMovieList = styled.div`
   display: grid;
 
   grid-gap: 1rem;
 `;
 
-const MovieContainer = styled.div`
+const StyledMovie = styled.div`
   display: grid;
 
   grid-template-columns: auto 1fr;
@@ -78,4 +82,18 @@ const MovieContainer = styled.div`
   grid-gap: 1rem;
 
   align-items: center;
+`;
+
+const StyledLink = styled(Link)`
+  padding: 5px;
+
+  color: #3c7ade;
+
+  text-decoration: none;
+
+  &:hover {
+    color: #ffffff;
+
+    background: #3c7ade;
+  }
 `;
