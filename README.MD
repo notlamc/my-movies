@@ -6,6 +6,10 @@ The aim of My Movies is to be able to play with new things I want to try out and
 
 It's handy to have a 'playground'.
 
+## Live Demo
+
+To see this live, you can use [this](https://zealous-allen-c794b6.netlify.app) link.
+
 ## Tech
 
 In this project, so far, I've used the following technologies to demonstrate their usage:
@@ -14,8 +18,9 @@ In this project, so far, I've used the following technologies to demonstrate the
 - React;
 - React Redux;
 - Styled Components;
-- React Router and;
-- React Helmet.
+- React Router;
+- React Helmet and;
+- Netlify.
 
 I've also used some react hooks (such as useEffect and useState) and also some hooks from React Redux (such as useSelector and useDispatch).
 
