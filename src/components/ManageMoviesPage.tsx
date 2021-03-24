@@ -47,7 +47,12 @@ const ManageMoviesPage = (props: RouteComponentProps) => {
           onClick={() =>
             dispatch(addMovieActionCreator(movieName ? movieName : ""))
           }
-          disabled={!movieName}
+          disabled={
+            !movieName ||
+            movies.findIndex(
+              (movie) => movie.name.toLowerCase() == movieName.toLowerCase()
+            ) > -1
+          }
         >
           Add Movie
         </button>
