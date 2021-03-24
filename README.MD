@@ -11,12 +11,13 @@ It's handy to have a 'playground'.
 In this project, so far, I've used the following technologies to demonstrate their usage:
 
 - Node.js;
-- React (I've used functional components rather than class based components);
-- React Redux (app wide state management);
-- Styled Components (I'm done with Stylus, inline CSS and variants thereof);
-- React Router Dom (to be able to differentiate between the pages of the app);
+- React;
+- React Redux;
+- Styled Components;
+- React Router and;
+- React Helmet.
 
-I've used some react hooks, such as useEffect, useState and some hooks from react-redux, such as useSelector and useDispatch. I used useState for component level state.
+I've also used some react hooks (such as useEffect and useState) and also some hooks from React Redux (such as useSelector and useDispatch).
 
 ## License
 
